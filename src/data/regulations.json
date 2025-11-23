@@ -1,0 +1,107 @@
+{
+  "timeline": [
+    {
+      "date": "2018-03",
+      "year": 2018,
+      "month": "Vår",
+      "level": "Nasjonalt",
+      "title": "Elsparkesykler blir lovlige",
+      "description": "Forbudet mot små elektriske kjøretøy oppheves",
+      "decisionMaker": "Samferdselsdepartementet",
+      "impact": "low"
+    },
+    {
+      "date": "2019-03",
+      "year": 2019,
+      "month": "Vår",
+      "level": "Lokalt",
+      "title": "Utleie starter",
+      "description": "Utleie av elsparkesykler starter i Oslo og andre byer",
+      "decisionMaker": "Private selskaper",
+      "impact": "medium"
+    },
+    {
+      "date": "2021-05",
+      "year": 2021,
+      "month": "Mai",
+      "level": "Nasjonalt",
+      "title": "Nye regler",
+      "description": "Maks 1 person, 6 km/t ved passering av gående, parkeringsregler",
+      "decisionMaker": "Stortinget",
+      "impact": "medium"
+    },
+    {
+      "date": "2021-09",
+      "year": 2021,
+      "month": "September",
+      "level": "Lokalt (Oslo)",
+      "title": "Nattestenging",
+      "description": "Nattestenging kl. 23–05, antall sykler redusert fra 23 000 til 8 000",
+      "decisionMaker": "Oslo kommune",
+      "impact": "high"
+    },
+    {
+      "date": "2022-01",
+      "year": 2022,
+      "month": "Januar",
+      "level": "Nasjonalt",
+      "title": "Regjeringen varsler",
+      "description": "Varsler promillegrense, aldersgrense og hjelmpåbud",
+      "decisionMaker": "Samferdselsdepartementet",
+      "impact": "high"
+    },
+    {
+      "date": "2022-06",
+      "year": 2022,
+      "month": "15. juni",
+      "level": "Nasjonalt",
+      "title": "Promillegrense og aldersgrense",
+      "description": "Elsparkesykkel omklassifisert. Promillegrense 0,2, aldersgrense 12 år, hjelmpåbud under 15 år",
+      "decisionMaker": "Samferdselsdepartementet",
+      "impact": "high"
+    },
+    {
+      "date": "2022-09",
+      "year": 2022,
+      "month": "1. september",
+      "level": "Nasjonalt",
+      "title": "Forsikring påbudt",
+      "description": "Ansvarsforsikring påbudt for utleiesykler",
+      "decisionMaker": "Samferdselsdepartementet",
+      "impact": "medium"
+    },
+    {
+      "date": "2023-01",
+      "year": 2023,
+      "month": "1. januar",
+      "level": "Nasjonalt",
+      "title": "Forsikring for private",
+      "description": "Ansvarsforsikring påbudt for private elsparkesykler",
+      "decisionMaker": "Samferdselsdepartementet",
+      "impact": "medium"
+    },
+    {
+      "date": "2025-04",
+      "year": 2025,
+      "month": "April",
+      "level": "Lokalt (Oslo)",
+      "title": "Dobling av sykler",
+      "description": "Antall utleiesykler dobles fra 8 000 til 16 000",
+      "decisionMaker": "Oslo kommune",
+      "impact": "high"
+    }
+  ],
+  "beforeAfter": {
+    "before": {
+      "period": "10/9-20 – 9/9-21",
+      "injuries": 2044
+    },
+    "after": {
+      "period": "10/9-21 – 9/9-22",
+      "injuries": 760
+    },
+    "decline": 63,
+    "summerDecline": 75
+  }
+}
+

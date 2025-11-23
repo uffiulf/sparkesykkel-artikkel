@@ -1,0 +1,133 @@
+.regulations-section {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.regulations-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.timeline-wrapper {
+  margin: 4rem 0;
+}
+
+.comparison-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.comparison-card {
+  background: var(--bg-color);
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  min-width: 250px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-card.before {
+  border-top: 4px solid var(--accent-red);
+}
+
+.comparison-card.after {
+  border-top: 4px solid var(--accent-blue);
+}
+
+.comparison-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comparison-period {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-number {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-card.before .comparison-number {
+  color: var(--accent-red);
+}
+
+.comparison-card.after .comparison-number {
+  color: var(--accent-blue);
+}
+
+.comparison-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.comparison-decline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--accent-blue);
+}
+
+.comparison-arrow {
+  font-size: 3rem;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .regulations-section {
+    padding: 2rem 1rem;
+  }
+
+  .comparison-cards {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .comparison-arrow {
+    transform: rotate(90deg);
+  }
+
+  .comparison-card {
+    padding: 2rem;
+    min-width: 100%;
+  }
+}
+
+.regulations-note {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(239, 68, 68, 0.05);
+  border-left: 4px solid var(--accent-red);
+  border-radius: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.regulations-note p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+

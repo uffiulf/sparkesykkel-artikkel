@@ -1,0 +1,45 @@
+{
+  "comparison": [
+    {
+      "city": "Oslo",
+      "injuries2021": 1878,
+      "injuries2022": 673,
+      "scooters2021": 23000,
+      "scooters2022": 8000,
+      "scooters2025": 16000,
+      "daily2021": 14,
+      "daily2022": 3,
+      "note": "Hovedstaden med flest skader"
+    },
+    {
+      "city": "Bergen",
+      "injuries2021": 90,
+      "daily2021": 3,
+      "scooters2021": 7000,
+      "note": "Ca. 3 ulykker daglig på legevakt/skadepoliklinikk"
+    },
+    {
+      "city": "Trondheim",
+      "injuries2021": 60,
+      "daily2021": 2,
+      "scooters2021": 3000,
+      "note": "Ca. 2 ulykker daglig"
+    },
+    {
+      "city": "Stavanger",
+      "injuries2021": 11,
+      "month2021": "Juni",
+      "note": "11 skader på legevakten i juni 2021"
+    }
+  ],
+  "totalDeaths": {
+    "2020": 2,
+    "2021": 1,
+    "2022": 5,
+    "2023": 0,
+    "2024": 4,
+    "total": 12,
+    "note": "Totalt 12 dødsfall 2020–2024"
+  }
+}
+

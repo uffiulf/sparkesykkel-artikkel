@@ -1,0 +1,123 @@
+.timeline-section {
+  background: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* NOTE: Fikse pin-spacer bakgrunn - GSAP lager denne automatisk når pin: true */
+/* Sørger for at pin-spacer ikke har hvit bakgrunn eller dekker innholdet */
+.pin-spacer {
+  background: var(--bg-color) !important;
+  background-color: var(--bg-color) !important;
+  z-index: 0 !important;
+}
+
+.pin-spacer > * {
+  z-index: 1 !important;
+}
+
+.timeline-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* NOTE: Default state - alle elementer er synlige som standard */
+/* GSAP vil animere dem inn, men hvis JS ikke kjører, forblir de synlige */
+.timeline-content > * {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+.timeline-content .section-title {
+  opacity: 1 !important;
+  color: var(--text-color);
+  visibility: visible !important;
+}
+
+.section-intro {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.timeline-content .section-text {
+  opacity: 1 !important;
+  color: var(--text-color);
+  visibility: visible !important;
+}
+
+.chart-container {
+  height: 500px;
+  width: 100%;
+  min-width: 600px;
+  min-height: 400px;
+  max-width: 100%;
+  margin-top: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  overflow: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.chart-container > div {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 2rem 1rem;
+  }
+
+  .chart-container {
+    height: 350px;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 100%;
+  }
+
+  .section-intro {
+    font-size: 1.1rem;
+  }
+}
+
+.section-note {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--accent-blue);
+  border-radius: 0.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.section-note p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+

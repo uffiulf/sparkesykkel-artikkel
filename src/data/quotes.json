@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Henrik Siverts",
+    "role": "Overlege, Oslo skadelegevakt",
+    "context": "Pressekonferanse juli 2021",
+    "year": 2021,
+    "quote": "Ingen enkeltaktivitet gjør per nå så mye skade som elsparkesykler.",
+    "source": "Dagsavisen"
+  },
+  {
+    "id": 2,
+    "name": "Henrik Siverts",
+    "role": "Overlege, Oslo skadelegevakt",
+    "context": "Om natteskader",
+    "year": 2021,
+    "quote": "Legene og sykepleierne som jobber her på natta, er lei seg og frustrerte, fordi dette er så utrolig unødvendig.",
+    "source": "Dagbladet"
+  },
+  {
+    "id": 3,
+    "name": "Henrik Siverts",
+    "role": "Overlege, Oslo skadelegevakt",
+    "context": "Om økningen i 2025",
+    "year": 2025,
+    "quote": "Jeg tør ikke tenke på dersom det hadde vært åpent på natt. Dette er faktisk like mange skader som i 2021 uten at det var åpent om natten.",
+    "source": "NRK"
+  },
+  {
+    "id": 4,
+    "name": "Tina Gaarder",
+    "role": "Kirurg, Ullevål universitetssykehus",
+    "context": "Om skadetyper",
+    "year": 2021,
+    "quote": "Det er mange som ikke har skader i hendene, fordi de rett og slett ikke rekker å ta seg for, så de går rett på snørra.",
+    "source": "Dagbladet"
+  },
+  {
+    "id": 5,
+    "name": "Stian Werme",
+    "role": "Skadet elsparkesyklist",
+    "context": "Personlig erfaring etter ulykke",
+    "year": 2021,
+    "quote": "Elsparkesykkel hjem fra nachspiel frarådes på det sterkeste.",
+    "source": "NRK"
+  },
+  {
+    "id": 6,
+    "name": "Randi",
+    "role": "Mor til Ingvild, 22, som døde",
+    "context": "Om datterens dødsfall",
+    "year": 2025,
+    "quote": "Noen ting skal man bare ikke gjøre: Å kjøre i påvirket tilstand, med svekket dømmekraft, på våte veier og uten hjelm. Vi voksne må fortsette å minne barna våre på dette. Vi har ingen å miste.",
+    "source": "VG"
+  }
+]
+

@@ -1,0 +1,31 @@
+{
+  "yearly": [
+    { "year": 2019, "injuries": 764, "note": "Første hele år med utleie" },
+    { "year": 2020, "injuries": 1331, "note": "Pandemiår, likevel kraftig økning" },
+    { "year": 2021, "injuries": 1878, "note": "Toppår – «skrekkens sommer»", "highlight": true },
+    { "year": 2022, "injuries": 673, "note": "64 % nedgang etter tiltak", "highlight": true },
+    { "year": 2023, "injuries": 556, "note": "Ytterligere 17 % nedgang" },
+    { "year": 2024, "injuries": 500, "note": "Data ufullstendig (estimat)" },
+    { "year": 2025, "injuries": 1000, "note": "Dobling fra 2024 (t.o.m. sept)" }
+  ],
+  "monthly": {
+    "2019": [1, 0, 4, 33, 49, 112, 157, 123, 94, 119, 44, 28],
+    "2020": [30, 38, 28, 36, 90, 188, 214, 253, 194, 134, 87, 39],
+    "2021": [17, 13, 47, 136, 219, 436, 410, 301, 143, 86, 59, 11],
+    "2022": [7, 14, 51, 59, 85, 98, 89, 78, 76, 56, 45, 15],
+    "2023": [5, 5, 17, 40, 70, 111, 69, 78, 67, 67, 19, 8]
+  },
+  "months": ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"],
+  "peak": {
+    "year": 2021,
+    "injuries": 1878,
+    "peakMonth": "Juni",
+    "peakMonthInjuries": 436
+  },
+  "decline": {
+    "from": 2021,
+    "to": 2022,
+    "percentage": 64
+  }
+}
+

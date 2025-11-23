@@ -1,0 +1,43 @@
+{
+  "riskVsBike": {
+    "scooter": 6,
+    "bike": 1,
+    "label": "5–7 ganger høyere risiko"
+  },
+  "timeOfDay": [
+    { "period": "Dag", "percentage": 30, "label": "Dag" },
+    { "period": "Kveld", "percentage": 13, "label": "Kveld" },
+    { "period": "Natt", "percentage": 57, "label": "Natt (23–05)" }
+  ],
+  "alcohol": {
+    "overall": 40,
+    "nightWeekend": 93,
+    "label": "Andel ruspåvirket"
+  },
+  "helmet": {
+    "withHelmet": 4,
+    "withoutHelmet": 282,
+    "total": 286,
+    "percentage": 1.4,
+    "label": "Hjelmbruk blant hodeskadde"
+  },
+  "age": {
+    "average": 30,
+    "range": "29–32",
+    "youngAdults": "25–34"
+  },
+  "gender": {
+    "men": 63,
+    "women": 37
+  },
+  "injuryTypes": {
+    "head": 34,
+    "headAndArm": 65,
+    "label": "Hodeskader + armskader"
+  },
+  "nightRisk": {
+    "multiplier": 3,
+    "label": "3+ ganger høyere risiko om natten"
+  }
+}
+
