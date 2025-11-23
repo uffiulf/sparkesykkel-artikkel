@@ -2,12 +2,15 @@
 // 1. GSAP animasjoner startet med opacity: 0 og ble aldri synlige hvis ScrollTrigger ikke trigger
 // 2. ChartLine rendret kun når dimensions.width > 0 (startet på 0)
 // 3. Pin-spacer kunne dekke innholdet
+// 4. useEffect kjørte asynkront, ScrollTrigger beregnet posisjoner feil
 // Løsning: 
+// - Bruker useLayoutEffect for synkron kjøring før browser paint
 // - Bruker gsap.from() i stedet for gsap.fromTo() - elementene er synlige i CSS som default
 // - GSAP animerer dem inn når ScrollTrigger trigger, men de forblir synlige hvis JS ikke kjører
 // - Fjernet conditional rendering i ChartLine, forbedret pin-spacer CSS
+// - Forbedret cleanup og chart refresh med debug logging
 
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ChartLine from './ChartLine';
@@ -23,8 +26,9 @@ function Section1_Timeline() {
   const [chartKey, setChartKey] = useState(0);
 
   // NOTE: ScrollTrigger setup - elementene er allerede synlige via CSS
-  // gsap.from() vil animere dem inn når ScrollTrigger trigger
-  useEffect(() => {
+  // Bruker useLayoutEffect for synkron kjøring før browser paint
+  // Dette forhindrer layout shifts og 'white section' bug
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
@@ -34,11 +38,18 @@ function Section1_Timeline() {
     const refreshChart = () => {
       if (chartContainer) {
         const width = chartContainer.offsetWidth;
+        console.log('[Section1_Timeline] Chart container width:', width); // Debug log
         if (width > 0) {
           // Tving re-render av ChartLine ved å endre key
-          setChartKey(prev => prev + 1);
+          setChartKey(prev => {
+            const newKey = prev + 1;
+            console.log('[Section1_Timeline] Chart key updated to:', newKey); // Debug log
+            return newKey;
+          });
           // Trigger re-render av ResponsiveContainer ved å refreshe ScrollTrigger
           ScrollTrigger.refresh();
+        } else {
+          console.warn('[Section1_Timeline] Chart container width is 0, retrying...'); // Debug log
         }
       }
     };
@@ -156,10 +167,22 @@ function Section1_Timeline() {
       setTimeout(refreshChart, 200);
     }
 
+    // Force ScrollTrigger refresh etter setup for å sikre korrekt beregning
+    ScrollTrigger.refresh();
+
     return () => {
       window.removeEventListener('resize', handleResize);
       resizeObserver.disconnect();
-      pinTrigger.kill();
+      // Kill all ScrollTrigger instances for denne seksjonen
+      if (pinTrigger) {
+        pinTrigger.kill();
+      }
+      // Kill alle ScrollTrigger animasjoner for denne seksjonen
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars && trigger.vars.trigger === section) {
+          trigger.kill();
+        }
+      });
     };
   }, []);
 
