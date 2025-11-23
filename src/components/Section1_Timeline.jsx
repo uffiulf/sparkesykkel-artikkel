@@ -1,13 +1,13 @@
 // NOTE: Fikset 2025 - Seksjonen var hvit/blank pga:
 // 1. GSAP animasjoner startet med opacity: 0 og ble aldri synlige hvis ScrollTrigger ikke trigger
 // 2. ChartLine rendret kun når dimensions.width > 0 (startet på 0)
-// 3. Pin-spacer kunne dekke innholdet
+// 3. CSS !important overrides forstyrret GSAP-animasjoner
 // 4. useEffect kjørte asynkront, ScrollTrigger beregnet posisjoner feil
 // Løsning: 
 // - Bruker useLayoutEffect for synkron kjøring før browser paint
-// - Bruker gsap.from() i stedet for gsap.fromTo() - elementene er synlige i CSS som default
-// - GSAP animerer dem inn når ScrollTrigger trigger, men de forblir synlige hvis JS ikke kjører
-// - Fjernet conditional rendering i ChartLine, forbedret pin-spacer CSS
+// - Bruker gsap.fromTo() med eksplisitt start og slutt state for forutsigbar oppførsel
+// - Fjernet CSS !important overrides som forstyrret GSAP
+// - Fjernet conditional rendering i ChartLine
 // - Forbedret cleanup og chart refresh med debug logging
 
 import { useLayoutEffect, useRef, useState } from 'react';
@@ -78,18 +78,17 @@ function Section1_Timeline() {
       },
     });
 
-    // NOTE: Bruker gsap.from() - elementene er synlige i CSS som default
-    // immediateRender: false sikrer at GSAP ikke setter opacity: 0 før ScrollTrigger trigger
-    // Hvis JS ikke kjører eller ScrollTrigger ikke trigger, forblir elementene synlige
+    // NOTE: Bruker gsap.fromTo() med eksplisitt start og slutt
+    // Dette sikrer forutsigbar start (0) og slutt (1) state hver gang
     // Animate chart appearance
-    gsap.from(
+    gsap.fromTo(
       chartRef.current,
+      { opacity: 0, scale: 0.9, y: 20 },
       {
-        opacity: 0,
-        scale: 0.9,
-        y: 20,
+        opacity: 1,
+        scale: 1,
+        y: 0,
         duration: 1,
-        immediateRender: false, // Viktig: ikke sett opacity: 0 umiddelbart
         scrollTrigger: {
           trigger: section,
           start: 'top 80%',
@@ -99,13 +98,13 @@ function Section1_Timeline() {
     );
 
     // Animate intro
-    gsap.from(
+    gsap.fromTo(
       introRef.current,
+      { opacity: 0, y: 20 },
       {
-        opacity: 0,
-        y: 20,
+        opacity: 1,
+        y: 0,
         duration: 0.8,
-        immediateRender: false,
         scrollTrigger: {
           trigger: section,
           start: 'top 80%',
@@ -115,14 +114,14 @@ function Section1_Timeline() {
     );
 
     // Animate text
-    gsap.from(
+    gsap.fromTo(
       textRef.current,
+      { opacity: 0, y: 30 },
       {
-        opacity: 0,
-        y: 30,
+        opacity: 1,
+        y: 0,
         duration: 1,
         delay: 0.3,
-        immediateRender: false,
         scrollTrigger: {
           trigger: section,
           start: 'top 80%',
@@ -132,14 +131,14 @@ function Section1_Timeline() {
     );
 
     // Animate note
-    gsap.from(
+    gsap.fromTo(
       noteRef.current,
+      { opacity: 0, y: 20 },
       {
-        opacity: 0,
-        y: 20,
+        opacity: 1,
+        y: 0,
         duration: 0.8,
         delay: 0.5,
-        immediateRender: false,
         scrollTrigger: {
           trigger: section,
           start: 'top 80%',
